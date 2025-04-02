@@ -24,8 +24,10 @@ data class OrderEntity(
     val id: Int = 0,
     @ColumnInfo(name = "client_id")
     val clientId: Int,
+    @ColumnInfo(name = "total")
+    val total: Float,
     @ColumnInfo(name = "date")
-    val data: Long,
+    val date: Long,
     @ColumnInfo(name = "completed")
     val completed: Boolean
 )
