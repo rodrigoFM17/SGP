@@ -1,6 +1,7 @@
 package com.example.sgprepartidor.Clients.presentation.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -20,12 +21,15 @@ import androidx.compose.ui.unit.sp
 import com.example.sgprepartidor.core.data.local.Client.entities.ClientEntity
 
 @Composable
-fun ClientCard(client: ClientEntity) {
+fun ClientCard(client: ClientEntity, navigateParticularClient: () -> Unit) {
     Column (
         modifier = Modifier
             .fillMaxWidth()
             .background(Color(0xFF353535))
             .padding(15.dp)
+            .clickable {
+                navigateParticularClient()
+            }
     ) {
         Text(
             text = client.name,

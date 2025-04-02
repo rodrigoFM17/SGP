@@ -12,4 +12,8 @@ class ProductRepository(context: Context) {
         productDAO.insertProduct(product)
     }
 
+    suspend fun getAllProducts() : List<ProductEntity> {
+        return productDAO.getAllProduct()
+    }
+
 }
