@@ -12,13 +12,15 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.sgprepartidor.Orders.presentation.AddOrder
+import com.example.sgprepartidor.Orders.presentation.OrdersViewModel
 import com.example.sgprepartidor.core.navigation.NavigationWrapper
 import com.example.sgprepartidor.layouts.BottomNavigationBar
 import com.example.sgprepartidor.ui.theme.SGPRepartidorTheme
 
 class MainActivity : ComponentActivity() {
-    @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,5 +35,5 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
-    NavigationWrapper()
+    AddOrder(OrdersViewModel(LocalContext.current))
 }
